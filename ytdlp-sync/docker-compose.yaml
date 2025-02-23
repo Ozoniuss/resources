@@ -1,0 +1,7 @@
+services:
+  ytdlp-sync:
+    build: .
+    container_name: ytdlp-sync
+    volumes:
+      - /home/rp8/homenasds/playlists:/playlists
+    command: ./download.sh
