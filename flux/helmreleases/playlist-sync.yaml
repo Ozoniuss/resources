@@ -27,5 +27,17 @@ spec:
   valuesFrom:
     - kind: Secret
       name: playlist-sync-secret
-      valuesKey: nfs
-      targetPath: nfs
+      valuesKey: path
+      targetPath: nfs.path
+    - kind: Secret
+      name: playlist-sync-secret
+      valuesKey: storage
+      targetPath: nfs.storage
+    - kind: Secret
+      name: playlist-sync-secret
+      valuesKey: server
+      targetPath: nfs.server
+    - kind: Secret
+      name: playlist-sync-secret
+      valuesKey: youtube_api_key
+      targetPath: youtubeApiKey
