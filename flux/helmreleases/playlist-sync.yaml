@@ -24,6 +24,9 @@ spec:
         kind: GitRepository
         name: playlist-sync-charts
         namespace: flux-system
+  values:
+    cronjob:
+      schedule: "0 0 * * *"
   valuesFrom:
     - kind: Secret
       name: playlist-sync-secret
