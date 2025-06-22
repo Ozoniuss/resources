@@ -19,7 +19,7 @@ spec:
   interval: 1m
   chart:
     spec:
-      chart: ./charts/playlist-sync
+      chart: ./chart
       sourceRef:
         kind: GitRepository
         name: playlist-sync-charts
