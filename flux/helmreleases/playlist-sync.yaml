@@ -1,0 +1,31 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: playlist-sync-charts
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: https://github.com/Ozoniuss/playlist-sync
+  ref:
+    branch: main
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: playlist-sync
+  namespace: playlist-sync
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: ./charts/playlist-sync
+      sourceRef:
+        kind: GitRepository
+        name: your-repo
+        namespace: flux-system
+  valuesFrom:
+    - kind: Secret
+      name: playlist-sync-secret
+      valuesKey: nfs
+      targetPath: nfs
