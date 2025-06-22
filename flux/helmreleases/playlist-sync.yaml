@@ -22,7 +22,7 @@ spec:
       chart: ./charts/playlist-sync
       sourceRef:
         kind: GitRepository
-        name: your-repo
+        name: playlist-sync-charts
         namespace: flux-system
   valuesFrom:
     - kind: Secret
