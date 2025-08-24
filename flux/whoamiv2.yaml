@@ -23,8 +23,11 @@ metadata:
   name: whoamiv2
   namespace: default
 spec:
-  selector: { app: whoamiv2 }
+  type: NodePort
+  selector:
+    app: whoamiv2
   ports:
-    - port: 80
-      targetPort: 80
+    - port: 80 # Service port inside cluster
+      targetPort: 80 # Container port
       protocol: TCP
+      nodePort: 31000 # Node port exposed on all nodes
