@@ -5,3 +5,11 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: flux
     name: playlist-sync
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cloudflare
+  labels:
+    app.kubernetes.io/managed-by: flux
+    name: cloudflare
