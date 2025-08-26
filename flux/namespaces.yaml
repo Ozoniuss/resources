@@ -5,6 +5,8 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: flux
     name: playlist-sync
+  annotations:
+    kustomize.toolkit.fluxcd.io/prune: "disabled"
 ---
 apiVersion: v1
 kind: Namespace
@@ -13,6 +15,8 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: flux
     name: cloudflare
+  annotations:
+    kustomize.toolkit.fluxcd.io/prune: "disabled"
 ---
 apiVersion: v1
 kind: Namespace
@@ -21,3 +25,5 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: flux
     name: infisticaleso
+  annotations:
+    kustomize.toolkit.fluxcd.io/prune: "disabled"
