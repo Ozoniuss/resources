@@ -21,3 +21,11 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: flux
     name: infisticaleso
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: external-secrets
+  labels:
+    app.kubernetes.io/managed-by: flux
+    name: external-secrets
