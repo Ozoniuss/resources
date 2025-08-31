@@ -17,6 +17,9 @@ metadata:
   namespace: playlist-sync
 spec:
   interval: 1m
+  failedJobsHistoryLimit: 1
+  successfulJobsHistoryLimit: 1
+  suspend: true
   chart:
     spec:
       chart: ./chart
