@@ -29,3 +29,11 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: flux
     name: external-secrets
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sealed-secrets
+  labels:
+    app.kubernetes.io/managed-by: flux
+    name: sealed-secrets
