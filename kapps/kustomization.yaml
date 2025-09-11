@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - whoami/
   - infistical-secret-sealed.yaml
+  - infistical-cluster-secret-store.yaml
