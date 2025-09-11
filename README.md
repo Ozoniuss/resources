@@ -26,3 +26,9 @@ flux tree ks <kustomization>
 flux tree ks flux-system
 ```
 
+See how your local changes will apply to the cluster by some Kustomization:
+```
+flux diff ks <kustomization> --path=<ks-path>
+flux diff ks apps --path=./kapps
+```
+
