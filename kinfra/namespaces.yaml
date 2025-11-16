@@ -37,3 +37,11 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: flux
     name: sealed-secrets
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: lifebuddies
+  labels:
+    app.kubernetes.io/managed-by: flux
+    name: lifebuddies
