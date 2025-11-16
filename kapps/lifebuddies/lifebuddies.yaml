@@ -1,0 +1,14 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: lifebuddies-charts
+  namespace: lifebuddies
+spec:
+  interval: 10m
+  provider: github
+  url: https://github.com/Ozoniuss/lifebuddies
+  ref:
+    branch: main
+  secretRef:
+    name: lifebuddies-github-app
