@@ -4,3 +4,4 @@ resources:
   - namespaces.yaml
   - eso.yaml
   - sealed-secret.yaml
+  - app-repositories.yaml
