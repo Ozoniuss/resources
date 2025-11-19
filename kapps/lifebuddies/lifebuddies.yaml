@@ -33,7 +33,7 @@ spec:
     image:
       repository: ozoniuss/default
       tag: lifebuddies-app-v0.2.4
-    migrations:
+    migration:
       image:
         repository: ozoniuss/default
         tag: lifebuddies-migration-v0.2.4
