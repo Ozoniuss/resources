@@ -12,3 +12,43 @@ spec:
     branch: main
   secretRef:
     name: lifebuddies-github-app
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: lifebuddies
+  namespace: lifebuddies
+spec:
+  interval: 1m
+  suspend: false
+  chart:
+    spec:
+      chart: ./chart
+      sourceRef:
+        kind: GitRepository
+        name: lifebuddies-charts
+        namespace: lifebuddies
+  values:
+    secretName: lifebuddies
+    env:
+      LIFEBUDDIES_ENVIRONMENT: production
+      LIFEBUDDIES_PORT: 80
+
+  # todo use something like below
+  # valuesFrom:
+  #   - kind: Secret
+  #     name: playlist-sync-secret
+  #     valuesKey: path
+  #     targetPath: nfs.path
+  #   - kind: Secret
+  #     name: playlist-sync-secret
+  #     valuesKey: storage
+  #     targetPath: nfs.storage
+  #   - kind: Secret
+  #     name: playlist-sync-secret
+  #     valuesKey: server
+  #     targetPath: nfs.server
+  #   - kind: Secret
+  #     name: playlist-sync-secret
+  #     valuesKey: youtube_api_key
+  #     targetPath: youtubeApiKey
