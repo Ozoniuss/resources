@@ -24,6 +24,7 @@ spec:
   chart:
     spec:
       chart: ./chart
+      version: 0.2.1
       sourceRef:
         kind: GitRepository
         name: lifebuddies-charts
