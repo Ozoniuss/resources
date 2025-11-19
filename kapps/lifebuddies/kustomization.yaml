@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - github-app-secret.yaml
   - lifebuddies.yaml
+  - lifebuddies-secret.yaml
