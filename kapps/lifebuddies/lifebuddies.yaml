@@ -30,6 +30,13 @@ spec:
         name: lifebuddies-charts
         namespace: lifebuddies
   values:
+    image:
+      repository: ozoniuss/default
+      tag: lifebuddies-app-v0.2.4
+    migrations:
+      image:
+        repository: ozoniuss/default
+        tag: lifebuddies-migration-v0.2.4
     secretName: lifebuddies
     env:
       LIFEBUDDIES_ENVIRONMENT: production
