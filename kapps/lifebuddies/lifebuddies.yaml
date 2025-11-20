@@ -24,19 +24,12 @@ spec:
   chart:
     spec:
       chart: ./chart
-      version: 0.2.5
+      version: 0.2.6
       sourceRef:
         kind: GitRepository
         name: lifebuddies-charts
         namespace: lifebuddies
   values:
-    image:
-      repository: ozoniuss/default
-      tag: lifebuddies-app-v0.2.5
-    migration:
-      image:
-        repository: ozoniuss/default
-        tag: lifebuddies-migration-v0.2.5
     secretName: lifebuddies
     env:
       LIFEBUDDIES_ENVIRONMENT: production
