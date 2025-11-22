@@ -36,7 +36,7 @@ spec:
       LIFEBUDDIES_PORT: 80
     service:
       port: 80
-      targePort: 80
+      targetPort: 80
 
   # todo use something like below
   # valuesFrom:
