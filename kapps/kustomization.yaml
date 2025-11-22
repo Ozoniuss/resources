@@ -4,3 +4,4 @@ resources:
   - lifebuddies/
   - whoami/
   - cloudflare-secret.yaml
+  - cloudflare-daemon.yaml
