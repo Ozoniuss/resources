@@ -45,3 +45,11 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: flux
     name: lifebuddies
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: misc
+  labels:
+    app.kubernetes.io/managed-by: flux
+    name: misc
