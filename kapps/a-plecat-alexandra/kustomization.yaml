@@ -5,7 +5,7 @@ resources:
   - manifests.yaml
 
 configMapGenerator:
-  - name: aplecatalexandra-www
+  - name: aplecatpereca-www
     namespace: misc
     files:
       - www/index.html

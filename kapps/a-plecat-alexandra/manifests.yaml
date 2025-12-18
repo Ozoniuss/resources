@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: aplecatalexandra
+  name: aplecatpereca
   namespace: misc
 spec:
   replicas: 1
   selector:
-    matchLabels: { app: aplecatalexandra }
+    matchLabels: { app: aplecatpereca }
   template:
     metadata:
-      labels: { app: aplecatalexandra }
+      labels: { app: aplecatpereca }
     spec:
       containers:
-        - name: aplecatalexandra
+        - name: aplecatpereca
           image: busybox:1.36.1
           command: ["sh", "-c", "httpd -f -p 80 -h /www"]
           ports:
@@ -23,15 +23,15 @@ spec:
       volumes:
         - name: www
           configMap:
-            name: aplecatalexandra-www
+            name: aplecatpereca-www
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: aplecatalexandra
+  name: aplecatpereca
   namespace: misc
 spec:
-  selector: { app: aplecatalexandra }
+  selector: { app: aplecatpereca }
   ports:
     - port: 80
       targetPort: 80
