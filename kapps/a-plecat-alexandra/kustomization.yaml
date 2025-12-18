@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - manifests.yaml
+
+configMapGenerator:
+  - name: aplecatalexandra-www
+    files:
+      - www/index.html
+      - www/app.js
+      - www/style.css
+
+generatorOptions:
+  disableNameSuffixHash: true

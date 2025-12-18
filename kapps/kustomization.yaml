@@ -3,5 +3,6 @@ kind: Kustomization
 resources:
   - lifebuddies/
   - whoami/
+  - a-plecat-alexandra/
   - cloudflare-secret.yaml
   - cloudflare-daemon.yaml

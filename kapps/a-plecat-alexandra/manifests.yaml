@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aplecatalexandra
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: aplecatalexandra }
+  template:
+    metadata:
+      labels: { app: aplecatalexandra }
+    spec:
+      containers:
+        - name: aplecatalexandra
+          image: busybox:1.36.1
+          command: ["sh", "-c", "httpd -f -p 80 -h /www"]
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: www
+              mountPath: /www
+      volumes:
+        - name: www
+          configMap:
+            name: aplecatalexandra-www
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aplecatalexandra
+  namespace: default
+spec:
+  selector: { app: aplecatalexandra }
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
