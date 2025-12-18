@@ -6,6 +6,7 @@ resources:
 
 configMapGenerator:
   - name: aplecatalexandra-www
+    namespace: misc
     files:
       - www/index.html
       - www/main.js
