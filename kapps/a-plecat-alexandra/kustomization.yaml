@@ -8,7 +8,7 @@ configMapGenerator:
   - name: aplecatalexandra-www
     files:
       - www/index.html
-      - www/app.js
+      - www/main.js
       - www/style.css
 
 generatorOptions:
