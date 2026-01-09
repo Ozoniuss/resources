@@ -4,5 +4,6 @@ resources:
   - lifebuddies/
   - whoami/
   - a-plecat-pereca/
+  - kube-prometheus-stack/
   - cloudflare-secret.yaml
   - cloudflare-daemon.yaml

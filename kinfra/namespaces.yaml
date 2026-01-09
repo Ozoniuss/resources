@@ -53,3 +53,11 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: flux
     name: misc
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kube-prometheus-stack
+  labels:
+    app.kubernetes.io/managed-by: flux
+    name: kube-prometheus-stack
