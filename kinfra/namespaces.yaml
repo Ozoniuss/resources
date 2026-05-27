@@ -61,3 +61,11 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: flux
     name: kube-prometheus-stack
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: navidrome
+  labels:
+    app.kubernetes.io/managed-by: flux
+    name: navidrome

@@ -5,5 +5,6 @@ resources:
   - whoami/
   - a-plecat-pereca/
   - kube-prometheus-stack/
+  - navidrome/
   - cloudflare-secret.yaml
   - cloudflare-daemon.yaml
