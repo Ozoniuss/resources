@@ -13,6 +13,7 @@ metadata:
   name: kube-prometheus-stack
   namespace: kube-prometheus-stack
 spec:
+  suspend: true
   targetNamespace: kube-prometheus-stack
   interval: 10m
   chart:
