@@ -49,18 +49,10 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: misc
+  name: a-plecat-pereca
   labels:
     app.kubernetes.io/managed-by: flux
-    name: misc
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: kube-prometheus-stack
-  labels:
-    app.kubernetes.io/managed-by: flux
-    name: kube-prometheus-stack
+    name: a-plecat-pereca
 ---
 apiVersion: v1
 kind: Namespace

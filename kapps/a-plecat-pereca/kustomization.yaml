@@ -6,7 +6,7 @@ resources:
 
 configMapGenerator:
   - name: aplecatpereca-www
-    namespace: misc
+    namespace: a-plecat-pereca
     files:
       - www/index.html
       - www/main.js
