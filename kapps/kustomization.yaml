@@ -5,3 +5,4 @@ resources:
   - a-plecat-pereca/
   - cloudflare/
   - default2/
+  - otel-demo/
