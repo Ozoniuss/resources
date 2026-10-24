@@ -49,3 +49,24 @@ spec:
                 - path: /
                   pathType: Prefix
                   port: 8080
+      # no idea what the AI did here, trying to fix image server
+      image-provider:
+        imageOverride:
+          repository: nginxinc/nginx-unprivileged
+          tag: 1.29.3-trixie-otel
+        envOverrides:
+          - name: NGINX_ENVSUBST_TEMPLATE_DIR
+            value: /static
+          - name: NGINX_ENVSUBST_OUTPUT_DIR
+            value: /etc/nginx
+        mountedEmptyDirs:
+          - name: static
+            mountPath: /static
+        initContainers:
+          - name: copy-static
+            image: ghcr.io/open-telemetry/demo:3.1.0-image-provider
+            command:
+              ["cp", "-r", "/static/.", "/nginx.conf.template", "/shared/"]
+            volumeMounts:
+              - name: static
+                mountPath: /shared
