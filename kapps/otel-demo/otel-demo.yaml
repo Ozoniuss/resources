@@ -23,3 +23,12 @@ spec:
         kind: HelmRepository
         name: open-telemetry
         namespace: otel-demo
+  # Fix for:
+  # Fatal glibc error: This version of Amazon Linux
+  # requires a newer ARM64 processor compliant with
+  #  at least ARM architecture 8.2-a with Cryptographic
+  #  extensions. On EC2 this is Graviton 2 or later.
+  values:
+    opensearch:
+      image:
+        tag: 2.9.0
