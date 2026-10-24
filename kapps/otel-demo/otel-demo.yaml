@@ -35,7 +35,7 @@ spec:
       opensearchJavaOpts: "-Xms512m -Xmx512m"
       resources:
         requests:
-          memory: 1Gi
+          memory: 768Mi
         limits:
           memory: 1536Mi
       # rp41 has more RAM
