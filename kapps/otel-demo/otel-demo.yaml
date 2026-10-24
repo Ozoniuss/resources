@@ -32,6 +32,22 @@ spec:
     opensearch:
       image:
         tag: 2.9.0
+      opensearchJavaOpts: "-Xms512m -Xmx512m"
+      resources:
+        requests:
+          memory: 1Gi
+        limits:
+          memory: 1536Mi
+      # rp41 has more RAM
+      nodeAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            preference:
+              matchExpressions:
+                - key: kubernetes.io/hostname
+                  operator: In
+                  values:
+                    - rp41
     components:
       frontend:
         # needed with the ingress below to be able to send traces
