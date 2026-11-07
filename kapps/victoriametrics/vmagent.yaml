@@ -1,0 +1,20 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: vmagent
+  namespace: victoriametrics
+spec:
+  interval: 10m
+  dependsOn:
+    - name: vmcluster
+  chart:
+    spec:
+      chart: victoria-metrics-agent
+      version: 0.51.0
+      sourceRef:
+        kind: HelmRepository
+        name: vm
+        namespace: victoriametrics
+  values:
+    remoteWrite:
+      - url: http://vmcluster-victoria-metrics-cluster-vminsert.victoriametrics.svc.cluster.local:8480/insert/0/prometheus/
