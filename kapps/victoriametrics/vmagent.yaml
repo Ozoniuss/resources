@@ -18,3 +18,19 @@ spec:
   values:
     remoteWrite:
       - url: http://vmcluster-victoria-metrics-cluster-vminsert.victoriametrics.svc.cluster.local:8480/insert/0/prometheus/
+        urlRelabelConfig:
+          - if: '{__name__=~"container_.*"}'
+            source_labels: [pod]
+            regex: "(.+)"
+            target_label: pod_name
+          - if: '{__name__=~"container_.*"}'
+            source_labels: [container]
+            regex: "(.+)"
+            target_label: container_name
+          - if: '{__name__=~"container_.*"}'
+            target_label: name
+            replacement: k8s_stub
+          - if: '{__name__=~"container_.*"}'
+            source_labels: [id]
+            regex: '^/system\.slice/(.+)\.service$'
+            target_label: systemd_service_name

@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - vmcluster.yaml
   - vmagent.yaml
+  - grafana.yaml
