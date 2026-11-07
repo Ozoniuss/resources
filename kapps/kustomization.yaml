@@ -6,3 +6,4 @@ resources:
   - cloudflare/
   - default2/
   - otel-demo/
+  - victoriametrics/

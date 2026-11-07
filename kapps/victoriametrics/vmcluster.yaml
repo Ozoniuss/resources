@@ -1,0 +1,37 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: vm
+  namespace: victoriametrics
+spec:
+  interval: 1h
+  url: https://victoriametrics.github.io/helm-charts/
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: vmcluster
+  namespace: victoriametrics
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: victoria-metrics-cluster
+      version: 0.54.0
+      sourceRef:
+        kind: HelmRepository
+        name: vm
+        namespace: victoriametrics
+  values:
+    vmselect:
+      podAnnotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8481"
+    vminsert:
+      podAnnotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8480"
+    vmstorage:
+      podAnnotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8482"

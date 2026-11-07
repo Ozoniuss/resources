@@ -69,3 +69,11 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: flux
     name: otel-demo
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: victoriametrics
+  labels:
+    app.kubernetes.io/managed-by: flux
+    name: victoriametrics
